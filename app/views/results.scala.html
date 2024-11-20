@@ -1,10 +1,18 @@
 <!-- @() -->
 import play.twirl.api.Html
 
-@(path: String)
+@(path: Option[String])
 
-@main {
+@main("Results") {
+  @if(path.isDefined) {
+    <p>Results for path: @path.get</p>
+  } else {
+    <p>No path provided.</p>
+  }
+}
   <div>
     Results for @path should be rendered here.
   </div>
+
+
 }
