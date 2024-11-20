@@ -9,7 +9,7 @@ import play.api.mvc._
 class Application @Inject()(val controllerComponents: ControllerComponents, val database: Database) extends BaseController {
 
   def index(): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
-    Ok(views.html.index(""))
+    Ok(views.html.index())
   }
 
   def showPath(path: String) = Action {
