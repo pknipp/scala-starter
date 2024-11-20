@@ -13,10 +13,7 @@ class Application @Inject()(val controllerComponents: ControllerComponents, val 
   }
 
   def showPath(path: Option[String]) = Action {
-    path match {
-      case Some(p) => Ok(views.html.results(p))
-      case None => Ok(views.html.index())
-    }
+    Ok(views.html.results(path))
   }
 
   def db(): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
