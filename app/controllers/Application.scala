@@ -19,13 +19,6 @@ class Application @Inject()(val controllerComponents: ControllerComponents, val 
     }
   }
 
-  def hello(name: Option[String]) = Action {
-    name match {
-      case Some(n) => Ok(views.html.hello(n))
-      case None => Ok(views.html.hello("World"))
-    }
-  }
-
   def db(): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
     // In this getting started app, we don't use a custom execution context to keep the code and configuration simple.
     // For real-world apps, consult the Play documentation on how to configure custom contexts and how to use them:
