@@ -12,9 +12,18 @@ class Application @Inject()(val controllerComponents: ControllerComponents, val 
     Ok(views.html.index())
   }
 
-  def showPath(path: String) = Action {
-    println(path)
-    Ok(views.html.results(path))
+  def showPath(path: Option[String]) = Action {
+    path match {
+      case Some(path) => Ok(views.html.results(path))
+      case None => Ok(views.html.index())
+    }
+  }
+
+  def hello(name: Option[String]) = Action {
+    name match {
+      case Some(n) => Ok(views.html.hello(n))
+      case None => Ok(views.html.hello("World"))
+    }
   }
 
   def db(): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
