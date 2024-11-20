@@ -2,7 +2,7 @@
 <!-- import play.twirl.api.Html -->
 @(path: Option[String])
 
-@main("Results") {
+@main {
   @if(path.isDefined) {
     <p>Results for path: @path.get</p>
   } else {
