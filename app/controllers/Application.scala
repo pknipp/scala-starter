@@ -17,7 +17,7 @@ class Application @Inject()(val controllerComponents: ControllerComponents, val 
   }
 
   def showName(name: String) = Action {
-    Ok(views.html.result(name))
+    Ok(views.html.results(name))
   }
 
   def db(): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
