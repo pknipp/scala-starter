@@ -14,7 +14,7 @@ class Application @Inject()(val controllerComponents: ControllerComponents, val 
 
   def showPath(path: Option[String]) = Action {
     path match {
-      case Some(path) => Ok(views.html.results(path))
+      case Some(p) => Ok(views.html.results(p))
       case None => Ok(views.html.index())
     }
   }
