@@ -16,6 +16,10 @@ class Application @Inject()(val controllerComponents: ControllerComponents, val 
     Ok(views.html.results(path))
   }
 
+  def showName(name: String) = Action {
+    Ok(views.html.result(name))
+  }
+
   def db(): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
     // In this getting started app, we don't use a custom execution context to keep the code and configuration simple.
     // For real-world apps, consult the Play documentation on how to configure custom contexts and how to use them:
