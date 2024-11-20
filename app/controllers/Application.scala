@@ -13,6 +13,7 @@ class Application @Inject()(val controllerComponents: ControllerComponents, val 
   }
 
   def showPath(path: String) = Action {
+    println(path)
     Ok(views.html.results(path))
   }
 
