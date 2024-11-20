@@ -12,8 +12,8 @@ class Application @Inject()(val controllerComponents: ControllerComponents, val 
     Ok(views.html.index())
   }
 
-  def results(): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
-    Ok(views.html.results())
+  def showPath(path: String) = Action {
+    Ok(views.html.results(path))
   }
 
   def db(): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
